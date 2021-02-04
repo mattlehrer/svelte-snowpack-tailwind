@@ -11,19 +11,6 @@
 </script>
 
 <style>
-  :global(body) {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  div code {
-    background: #0002;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-  div p {
-    margin: 0.4rem;
-  }
-
   div header {
     background-color: #f9f6f6;
     color: #333;
