@@ -3,7 +3,7 @@ module.exports = {
 	extends: "@snowpack/app-scripts-svelte",
 	mount: {
 		public: "/",
-		src: "/_dist_",
+		src: "/dist",
 	},
 	plugins: [
 		[
