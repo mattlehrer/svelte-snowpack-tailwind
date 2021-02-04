@@ -14,23 +14,5 @@ module.exports = {
 		"@snowpack/plugin-dotenv",
 		"@snowpack/plugin-typescript",
 	],
-	install: [
-		/* ... */
-	],
-	installOptions: {
-		installTypes: true,
-		/* ... */
-	},
-	devOptions: {
-		/* ... */
-	},
-	buildOptions: {
-		/* ... */
-	},
-	proxy: {
-		/* ... */
-	},
-	alias: {
-		/* ... */
-	},
+	packageOptions: {types: true}
 };
