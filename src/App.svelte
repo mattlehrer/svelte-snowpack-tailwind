@@ -9,7 +9,6 @@
     authCode: "",
     formType: "signUp",
   };
-  $: console.log({ formState });
 
   async function signUp() {
     await Auth.signUp({
@@ -32,6 +31,12 @@
     Amplify.configure(config);
   });
 </script>
+
+<style>
+  input {
+    @apply shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md;
+  }
+</style>
 
 <div class="">
   <h1>Welcome</h1>
