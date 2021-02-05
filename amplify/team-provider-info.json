@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sveltesnowpack-dev-171015-authRole",
+      "UnauthRoleArn": "arn:aws:iam::700969243142:role/amplify-sveltesnowpack-dev-171015-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::700969243142:role/amplify-sveltesnowpack-dev-171015-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-sveltesnowpack-dev-171015-deployment",
+      "UnauthRoleName": "amplify-sveltesnowpack-dev-171015-unauthRole",
+      "StackName": "amplify-sveltesnowpack-dev-171015",
+      "StackId": "arn:aws:cloudformation:us-west-2:700969243142:stack/amplify-sveltesnowpack-dev-171015/ea06b430-674e-11eb-9062-0a0b1a1dd923",
+      "AmplifyAppId": "d2bahn3jw6ures"
+    }
+  }
+}
