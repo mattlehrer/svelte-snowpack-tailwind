@@ -1,0 +1,11 @@
+type Post @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  data: AWSJSON
+  userID: ID!
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: String
+  Posts: [Post] @connection(keyName: "byUser", fields: ["id"])
+}
