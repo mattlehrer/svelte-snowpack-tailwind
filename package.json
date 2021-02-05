@@ -5,6 +5,7 @@
     "ts-check": "svelte-check"
   },
   "dependencies": {
+    "aws-amplify": "^3.3.17",
     "svelte": "^3.32.1"
   },
   "devDependencies": {

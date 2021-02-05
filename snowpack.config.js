@@ -14,5 +14,8 @@ module.exports = {
     "@snowpack/plugin-dotenv",
     "@snowpack/plugin-typescript",
   ],
-  packageOptions: { types: true },
+  packageOptions: {
+    types: true,
+    polyfillNode: true,
+  },
 };

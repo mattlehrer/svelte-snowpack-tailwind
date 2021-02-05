@@ -10,6 +10,11 @@
       "StackName": "amplify-sveltesnowpack-staging-13242",
       "StackId": "arn:aws:cloudformation:us-west-2:700969243142:stack/amplify-sveltesnowpack-staging-13242/0a9c80a0-6752-11eb-9875-066453b973ed",
       "AmplifyAppId": "d3qq6uw9wpdy3h"
+    },
+    "categories": {
+      "auth": {
+        "sveltesnowpack": {}
+      }
     }
   }
 }

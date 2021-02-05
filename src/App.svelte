@@ -1,49 +1,86 @@
 <script>
+  import Amplify, { Auth } from "aws-amplify";
   import { onMount } from "svelte";
+  import config from "./aws-exports";
 
-  let count: number = 0;
+  $: formState = {
+    username: "",
+    password: "",
+    authCode: "",
+    formType: "signUp",
+  };
+  $: console.log({ formState });
+
+  async function signUp() {
+    await Auth.signUp({
+      username: formState.username,
+      password: formState.password,
+    });
+    formState.formType = "confirmSignUp";
+  }
+
+  async function confirmSignUp() {
+    await Auth.confirmSignUp(formState.username, formState.authCode);
+  }
+
+  async function signIn() {
+    await Auth.signIn(formState.username, formState.password);
+    formState.formType = "signedIn";
+  }
+
   onMount(() => {
-    const interval = setInterval(() => count++, 1000);
-    return () => {
-      clearInterval(interval);
-    };
+    Amplify.configure(config);
   });
 </script>
 
-<style>
-  div header {
-    font-size: calc(10px + 2vmin);
-  }
-  div img {
-    height: 36vmin;
-    animation: App-logo-spin infinite 1.6s ease-in-out alternate;
-  }
-  @keyframes App-logo-spin {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.06);
-    }
-  }
-</style>
-
-<div class="text-center">
-  <header
-    class="flex flex-col items-center justify-center min-h-screen text-gray-700 bg-gray-100"
-  >
-    <img src="/logo.svg" alt="logo" class="mb-12 pointer-events-none" />
-    <p>Edit <code>src/App.svelte</code> and save to reload.</p>
-    <p>Page has been open for <code>{count}</code> seconds.</p>
-    <p>
-      <a
-        class="text-red-500"
-        href="https://svelte.dev"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn Svelte
-      </a>
-    </p>
-  </header>
+<div class="">
+  <h1>Welcome</h1>
+  {#if formState?.formType === "signUp"}
+    <div>
+      <input
+        name="email"
+        bind:value="{formState.username}"
+        placeholder="email"
+      />
+      <input
+        name="password"
+        type="password"
+        bind:value="{formState.password}"
+        placeholder="password"
+      />
+      <button on:click="{signUp}">Sign Up</button>
+      <button on:click="{signIn}">Sign In</button>
+    </div>
+  {:else if formState?.formType === "confirmSignUp"}
+    <div>
+      <input
+        name="authCode"
+        bind:value="{formState.authCode}"
+        placeholder="Confirmation Code"
+      />
+      <button on:click="{confirmSignUp}">Confirm Sign Up</button>
+    </div>
+  {:else if formState?.formType === "signIn"}
+    <div>
+      <input
+        name="email"
+        bind:value="{formState.username}"
+        placeholder="email"
+      />
+      <input
+        name="password"
+        type="password"
+        bind:value="{formState.password}"
+        placeholder="password"
+      />
+      <button on:click="{signIn}">Sign In</button>
+    </div>
+  {:else if formState?.formType === "signedIn"}
+    <div>
+      <h2>You are signed in</h2>
+    </div>
+  {:else}
+    <h2>Loading</h2>
+    JSON.stringify(formState, null, 2)
+  {/if}
 </div>
