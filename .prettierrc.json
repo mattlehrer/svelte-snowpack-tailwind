@@ -1,4 +1,5 @@
 {
-	"svelteSortOrder": "options-scripts-styles-markup",
-	"svelteStrictMode": true
+  "svelteSortOrder": "options-scripts-styles-markup",
+  "svelteStrictMode": true,
+  "trailingComma": "all"
 }

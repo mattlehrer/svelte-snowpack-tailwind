@@ -1,8 +1,8 @@
 # Svelte with Typescript and TailwindCSS built with Snowpack
 
 > ✨ Community template for Snowpack + Svelte + Typescript + TailwindCSS
-Based on https://github.com/GarrettCannon/snowpack-svelte-ts-tw
-with some updates and cleanup
+> Based on https://github.com/GarrettCannon/snowpack-svelte-ts-tw
+> with some updates and cleanup
 
 Create a new project with:
 
