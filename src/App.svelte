@@ -12,17 +12,10 @@
 
 <style>
   div header {
-    background-color: #f9f6f6;
-    color: #333;
-    min-height: 100vh;
     font-size: calc(10px + 2vmin);
-  }
-  div a {
-    color: #ff3e00;
   }
   div img {
     height: 36vmin;
-    margin-bottom: 3rem;
     animation: App-logo-spin infinite 1.6s ease-in-out alternate;
   }
   @keyframes App-logo-spin {
@@ -36,12 +29,19 @@
 </style>
 
 <div class="text-center">
-  <header class="flex flex-col items-center justify-center">
-    <img src="/logo.svg" alt="logo" class="pointer-events-none" />
+  <header
+    class="flex flex-col items-center justify-center min-h-screen text-gray-700 bg-gray-100"
+  >
+    <img src="/logo.svg" alt="logo" class="mb-12 pointer-events-none" />
     <p>Edit <code>src/App.svelte</code> and save to reload.</p>
     <p>Page has been open for <code>{count}</code> seconds.</p>
     <p>
-      <a href="https://svelte.dev" target="_blank" rel="noopener noreferrer">
+      <a
+        class="text-red-500"
+        href="https://svelte.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Learn Svelte
       </a>
     </p>
