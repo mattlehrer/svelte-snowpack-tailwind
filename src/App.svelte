@@ -5,26 +5,37 @@
 
   $: formState = {
     username: "",
+    email: "",
     password: "",
     authCode: "",
     formType: "signUp",
   };
 
   async function signUp() {
-    await Auth.signUp({
+    const response = await Auth.signUp({
       username: formState.username,
       password: formState.password,
+      attributes: {
+        email: formState.email,
+      },
     });
     formState.formType = "confirmSignUp";
+    console.log({ response });
   }
 
   async function confirmSignUp() {
-    await Auth.confirmSignUp(formState.username, formState.authCode);
+    const response = await Auth.confirmSignUp(
+      formState.username,
+      formState.authCode,
+    );
+    formState.formType = "signIn";
+    console.log({ response });
   }
 
   async function signIn() {
-    await Auth.signIn(formState.username, formState.password);
+    const response = await Auth.signIn(formState.username, formState.password);
     formState.formType = "signedIn";
+    console.log({ response });
   }
 
   onMount(() => {
@@ -43,10 +54,11 @@
   {#if formState?.formType === "signUp"}
     <div>
       <input
-        name="email"
+        name="username"
         bind:value="{formState.username}"
-        placeholder="email"
+        placeholder="username"
       />
+      <input name="email" bind:value="{formState.email}" placeholder="email" />
       <input
         name="password"
         type="password"

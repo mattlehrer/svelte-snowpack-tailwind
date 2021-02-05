@@ -1,27 +1,22 @@
 {
-    "identityPoolName": "testAuthIdentityPool",
+    "identityPoolName": "sveltesnowpack16326ac4_identitypool_16326ac4",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "svelte923f2f67",
-    "userPoolName": "sveltesnowpack",
+    "resourceNameTruncated": "svelte16326ac4",
+    "userPoolName": "sveltesnowpack16326ac4_userpool_16326ac4",
     "autoVerifiedAttributes": [
-        "phone_number"
+        "email"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
         "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
-    "smsVerificationMessage": "Forgot password code: {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-        "Requires Lowercase",
-        "Requires Numbers",
-        "Requires Symbols",
-        "Requires Uppercase"
-    ],
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
         "email"
     ],
@@ -33,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "svelte923f2f67_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "svelte16326ac4_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "923f2f67",
-    "resourceName": "sveltesnowpack",
+    "sharedId": "16326ac4",
+    "resourceName": "sveltesnowpack16326ac4",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -50,16 +45,9 @@
             "Arn"
         ]
     },
-    "serviceName": "Cognito",
-    "usernameAttributes": [
-        "email"
-    ],
-    "useDefault": "manual",
-    "userPoolGroups": false,
+    "useDefault": "default",
     "userPoolGroupList": [],
-    "adminQueries": false,
-    "thirdPartyAuth": false,
-    "authProviders": [],
+    "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "dependsOn": []
 }

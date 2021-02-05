@@ -1,19 +1,19 @@
 {
-  "staging": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-sveltesnowpack-staging-13242-authRole",
-      "UnauthRoleArn": "arn:aws:iam::700969243142:role/amplify-sveltesnowpack-staging-13242-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::700969243142:role/amplify-sveltesnowpack-staging-13242-authRole",
+      "AuthRoleName": "amplify-sveltesnowpack-dev-121728-authRole",
+      "UnauthRoleArn": "arn:aws:iam::700969243142:role/amplify-sveltesnowpack-dev-121728-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::700969243142:role/amplify-sveltesnowpack-dev-121728-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-sveltesnowpack-staging-13242-deployment",
-      "UnauthRoleName": "amplify-sveltesnowpack-staging-13242-unauthRole",
-      "StackName": "amplify-sveltesnowpack-staging-13242",
-      "StackId": "arn:aws:cloudformation:us-west-2:700969243142:stack/amplify-sveltesnowpack-staging-13242/0a9c80a0-6752-11eb-9875-066453b973ed",
-      "AmplifyAppId": "d3qq6uw9wpdy3h"
+      "DeploymentBucketName": "amplify-sveltesnowpack-dev-121728-deployment",
+      "UnauthRoleName": "amplify-sveltesnowpack-dev-121728-unauthRole",
+      "StackName": "amplify-sveltesnowpack-dev-121728",
+      "StackId": "arn:aws:cloudformation:us-west-2:700969243142:stack/amplify-sveltesnowpack-dev-121728/2d1be6a0-67ef-11eb-aa01-02179cf26575",
+      "AmplifyAppId": "d2l3wu34p7vbnb"
     },
     "categories": {
       "auth": {
-        "sveltesnowpack": {}
+        "sveltesnowpack16326ac4": {}
       }
     }
   }
