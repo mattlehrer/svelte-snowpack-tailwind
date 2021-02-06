@@ -78,19 +78,27 @@
   div > div {
     @apply space-y-6;
   }
+
+  button {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+  }
 </style>
 
-<div class="max-w-xs mx-auto">
-  <h1>Welcome</h1>
+<div class="max-w-xs mx-auto my-16">
   {#if formState?.formType === "signUp"}
     <div>
       <input
         name="username"
         bind:value="{formState.username}"
+        type="text"
         placeholder="username"
-        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       />
-      <input name="email" bind:value="{formState.email}" placeholder="email" />
+      <input
+        name="email"
+        type="text"
+        bind:value="{formState.email}"
+        placeholder="email"
+      />
       <input
         name="password"
         type="password"
@@ -105,6 +113,7 @@
     <div>
       <input
         name="authCode"
+        type="text"
         bind:value="{formState.authCode}"
         placeholder="Confirmation Code"
       />
@@ -114,6 +123,7 @@
     <div>
       <input
         name="username"
+        type="text"
         bind:value="{formState.username}"
         placeholder="username"
       />
