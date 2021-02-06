@@ -1,5 +1,5 @@
 <script>
-  import Amplify, { Auth } from "aws-amplify";
+  import Amplify, { Auth, Hub } from "aws-amplify";
   import { onMount } from "svelte";
   import config from "./aws-exports";
 
@@ -10,6 +10,8 @@
     authCode: "",
     formType: "signUp",
   };
+
+  let user: any = {};
 
   async function signUp() {
     const response = await Auth.signUp({
@@ -38,8 +40,35 @@
     console.log({ response });
   }
 
-  onMount(() => {
+  onMount(async () => {
     Amplify.configure(config);
+    try {
+      user = await Auth.currentAuthenticatedUser();
+      console.log({ user });
+      formState.formType = "signedIn";
+    } catch (error) {
+      console.log({ error });
+    }
+
+    Hub.listen("auth", (data) => {
+      switch (data.payload.event) {
+        case "signIn":
+          console.log("user signed in");
+          break;
+        case "signUp":
+          console.log("user signed up");
+          break;
+        case "signOut":
+          formState.formType = "signUp";
+          console.log("user signed out");
+          break;
+        case "signIn_failure":
+          console.log("user sign in failed");
+          break;
+        case "configured":
+          console.log("the Auth module is configured");
+      }
+    });
   });
 </script>
 
@@ -47,9 +76,13 @@
   input {
     @apply shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md;
   }
+
+  div > div {
+    @apply space-y-6;
+  }
 </style>
 
-<div class="">
+<div class="max-w-xs mx-auto">
   <h1>Welcome</h1>
   {#if formState?.formType === "signUp"}
     <div>
@@ -66,7 +99,8 @@
         placeholder="password"
       />
       <button on:click="{signUp}">Sign Up</button>
-      <button on:click="{signIn}">Sign In</button>
+      <button on:click="{() => (formState.formType = 'signIn')}">Sign In</button
+      >
     </div>
   {:else if formState?.formType === "confirmSignUp"}
     <div>
@@ -80,9 +114,9 @@
   {:else if formState?.formType === "signIn"}
     <div>
       <input
-        name="email"
+        name="username"
         bind:value="{formState.username}"
-        placeholder="email"
+        placeholder="username"
       />
       <input
         name="password"
@@ -95,6 +129,7 @@
   {:else if formState?.formType === "signedIn"}
     <div>
       <h2>You are signed in</h2>
+      <button on:click="{() => Auth.signOut()}">Sign Out</button>
     </div>
   {:else}
     <h2>Loading</h2>
