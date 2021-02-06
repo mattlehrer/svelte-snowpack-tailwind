@@ -71,16 +71,11 @@
 </script>
 
 <style>
-  input {
-    @apply shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md;
+  div div {
+    @apply space-y-4;
   }
-
-  div > div {
-    @apply space-y-6;
-  }
-
   button {
-    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+    @apply px-8 border border-gray-400;
   }
 </style>
 
