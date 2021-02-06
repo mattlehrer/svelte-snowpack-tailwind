@@ -1,6 +1,9 @@
+import Amplify from "aws-amplify";
 import App from "./App.svelte";
+import config from "./aws-exports";
 import "./styles/main.css";
 
+Amplify.configure(config);
 var app = new App({
   target: document.body,
 });

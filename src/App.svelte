@@ -1,7 +1,6 @@
 <script>
-  import Amplify, { Auth, Hub } from "aws-amplify";
+  import { Auth, Hub } from "aws-amplify";
   import { onMount } from "svelte";
-  import config from "./aws-exports";
 
   $: formState = {
     username: "",
@@ -41,7 +40,6 @@
   }
 
   onMount(async () => {
-    Amplify.configure(config);
     try {
       user = await Auth.currentAuthenticatedUser();
       console.log({ user });
@@ -90,6 +88,7 @@
         name="username"
         bind:value="{formState.username}"
         placeholder="username"
+        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       />
       <input name="email" bind:value="{formState.email}" placeholder="email" />
       <input
