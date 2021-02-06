@@ -5,15 +5,7 @@ module.exports = {
     public: "/",
     src: "/dist",
   },
-  plugins: [
-    [
-      "@snowpack/plugin-build-script",
-      { cmd: "postcss", input: [".css"], output: [".css"] },
-    ],
-    "@snowpack/plugin-svelte",
-    "@snowpack/plugin-dotenv",
-    "@snowpack/plugin-typescript",
-  ],
+  plugins: ["@snowpack/plugin-postcss", "@snowpack/plugin-typescript"],
   packageOptions: {
     types: true,
     polyfillNode: true,
