@@ -18,4 +18,13 @@ module.exports = {
     types: true,
     polyfillNode: true,
   },
+  buildOptions: {
+    clean: true,
+  },
+  optimize: {
+    bundle: true,
+    minify: true,
+    treeshake: true,
+    target: "es2020",
+  },
 };
