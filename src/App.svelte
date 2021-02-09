@@ -11,13 +11,17 @@
 </script>
 
 <style>
-  div header {
-    font-size: calc(10px + 2vmin);
+  div {
+    & header {
+      font-size: calc(10px + 2vmin);
+    }
+
+    & img {
+      height: 36vmin;
+      animation: App-logo-spin infinite 1.6s ease-in-out alternate;
+    }
   }
-  div img {
-    height: 36vmin;
-    animation: App-logo-spin infinite 1.6s ease-in-out alternate;
-  }
+
   @keyframes App-logo-spin {
     from {
       transform: scale(1);
