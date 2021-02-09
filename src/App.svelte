@@ -71,11 +71,24 @@
 </script>
 
 <style>
-  div div {
-    @apply space-y-4;
+  div {
+    & header {
+      font-size: calc(10px + 2vmin);
+    }
+
+    & img {
+      height: 36vmin;
+      animation: App-logo-spin infinite 1.6s ease-in-out alternate;
+    }
   }
-  button {
-    @apply px-8 border border-gray-400;
+
+  @keyframes App-logo-spin {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.06);
+    }
   }
 </style>
 
