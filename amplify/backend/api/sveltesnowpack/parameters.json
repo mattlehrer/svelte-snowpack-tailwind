@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "sveltesnowpack",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authsveltesnowpack16326ac4",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
