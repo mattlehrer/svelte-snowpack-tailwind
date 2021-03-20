@@ -4,6 +4,7 @@ module.exports = {
   preprocess: autoPreprocess({
     defaults: {
       script: "typescript",
+      style: "postcss",
     },
     postcss: true,
   }),
