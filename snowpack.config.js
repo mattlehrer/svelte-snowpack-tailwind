@@ -14,5 +14,5 @@ module.exports = {
     "@snowpack/plugin-dotenv",
     "@snowpack/plugin-typescript",
   ],
-  packageOptions: { types: true },
+  packageOptions: { types: true, rollup: { preventAssignment: true } },
 };
